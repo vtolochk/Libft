@@ -6,7 +6,7 @@
 /*   By: vtolochk <vtolochk@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/21 19:46:00 by vtolochk          #+#    #+#             */
-/*   Updated: 2018/01/27 12:28:47 by vtolochk         ###   ########.fr       */
+/*   Updated: 2018/01/30 16:30:28 by vtolochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,8 @@ static int		ft_characters(t_data data)
 			ft_put('0', data.wid.wid);
 		ret = data.wid.wid;
 	}
-	if (data.u_symb != 0 && MB_CUR_MAX > 1)
+	if (data.u_symb != 0)
 		ret += ft_putchar(data.u_symb, 0);
-	else if (data.u_symb != 0)
-		ret += ft_putchar(data.u_symb, 1);
 	else
 		ret += ft_putchar(data.symb, 1);
 	if (data.wid.wid > 0 && data.fl.minus == 1)

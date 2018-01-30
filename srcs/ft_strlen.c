@@ -6,7 +6,7 @@
 /*   By: vtolochk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/03 15:55:59 by vtolochk          #+#    #+#             */
-/*   Updated: 2017/11/23 11:16:58 by vtolochk         ###   ########.fr       */
+/*   Updated: 2018/01/30 16:23:59 by vtolochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	size_t i;
 
 	i = 0;
-	if (str == NULL)
+	if (s == NULL)
 		return (0);
 	while (*s++ != '\0')
 		i++;
