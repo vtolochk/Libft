@@ -6,7 +6,7 @@
 /*   By: vtolochk <vtolochk@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 17:10:00 by vtolochk          #+#    #+#             */
-/*   Updated: 2018/01/27 11:41:53 by vtolochk         ###   ########.fr       */
+/*   Updated: 2018/01/31 15:20:38 by vtolochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ unsigned int	ft_uputstr(unsigned int *str)
 		return (0);
 	while (*str != '\0')
 	{
-		i += ft_putchar(*str, 0);
+		i += ft_putchar(*str);
 		str++;
 	}
 	return (i);

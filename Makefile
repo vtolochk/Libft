@@ -6,7 +6,7 @@
 #    By: vtolochk <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/31 16:48:11 by vtolochk          #+#    #+#              #
-#    Updated: 2018/01/30 15:07:31 by vtolochk         ###   ########.fr        #
+#    Updated: 2018/01/31 15:36:53 by vtolochk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ ORIGINAL_LIST = ft_atoi.c ft_bzero.c ft_free_tab.c ft_isalnum.c ft_isalpha.c \
 		check_for_additional_arg.c check_for_specifiers.c colors.c  \
 		format_and_print.c ft_binary.c ft_check_prefix.c ft_end_printf.c \
 		ft_float.c ft_get_act_bits.c ft_pointer.c ft_printf.c \
-		ft_putchar.c ft_putstr.c ft_snumbers.c ft_unumbers.c ft_uputstr.c \
+		ft_putchar.c ft_snumbers.c ft_unumbers.c ft_uputstr.c \
 		ft_ustrlen.c ft_ustrsub.c handling_strings.c helpers.c if_functions.c \
 		initialization.c
 

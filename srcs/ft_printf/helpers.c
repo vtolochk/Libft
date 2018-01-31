@@ -6,7 +6,7 @@
 /*   By: vtolochk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/27 11:28:43 by vtolochk          #+#    #+#             */
-/*   Updated: 2018/01/28 19:30:22 by vtolochk         ###   ########.fr       */
+/*   Updated: 2018/01/31 15:22:54 by vtolochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,17 @@ int		no_spec(const char **format, int i)
 
 int		ft_put(char sign, ssize_t len)
 {
-	int i;
+	int		ret;
+	char	*str;
 
-	i = 0;
+	ret = 0;
 	if (len <= 0)
 		return (0);
-	while (len-- != 0)
-		i += write(1, &sign, 1);
-	return (i);
+	str = (char *)malloc(sizeof(char) * len);
+	ft_memset(str, sign, len);
+	ret = write(1, str, len);
+	free(str);
+	return (ret);
 }
 
 int		ft_check_all(va_list *ap, t_data *data, const char **form)

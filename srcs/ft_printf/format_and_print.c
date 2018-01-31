@@ -6,7 +6,7 @@
 /*   By: vtolochk <vtolochk@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/21 19:46:00 by vtolochk          #+#    #+#             */
-/*   Updated: 2018/01/30 16:35:22 by vtolochk         ###   ########.fr       */
+/*   Updated: 2018/01/31 15:23:21 by vtolochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,12 @@ static int		ft_characters(t_data data)
 			ft_put('0', data.wid.wid);
 		ret = data.wid.wid;
 	}
-	if (data.u_symb != 0)
-		ret += ft_putchar(data.u_symb, 0);
+	if (data.u_symb != 0 && MB_CUR_MAX > 1)
+		ret += ft_putchar(data.u_symb);
+	else if (data.u_symb != 0)
+		ret += write(1, &data.u_symb, 1);
 	else
-		ret += ft_putchar(data.symb, 1);
+		ret += write(1, &data.symb, 1);
 	if (data.wid.wid > 0 && data.fl.minus == 1)
 		ret += ft_put(' ', data.wid.wid);
 	return (ret);
@@ -60,7 +62,7 @@ static int		ft_strings(t_data dat, size_t i, int str_len)
 	if (dat.u_str != NULL)
 		ret += ft_uputstr(dat.u_str);
 	else
-		ret += ft_putstr(dat.str);
+		ret += write(1, dat.str, str_len);
 	if (dat.wid.wid > 0 && dat.fl.minus == 1)
 		ret += ft_put(' ', dat.wid.wid);
 	return (ret);
@@ -74,19 +76,19 @@ static int		ft_if_minus(t_data data, int pref_len, int str_len, int *flag)
 	if (data.fl.zero == 1 && data.prec.prec == str_len)
 	{
 		*flag = 1;
-		ret += ft_putstr(data.prefix);
+		ret += write(1, data.prefix, pref_len);
 		ret += ft_put('0', data.wid.wid - pref_len - data.prec.prec);
 	}
 	else
 		ret += ft_put(' ', data.wid.wid - pref_len - data.prec.prec);
 	if (*flag == 0)
-		ret += ft_putstr(data.prefix);
+		ret += write(1, data.prefix, pref_len);
 	while (data.prec.prec != str_len)
 	{
 		ret += write(1, "0", 1);
 		data.prec.prec--;
 	}
-	ret += ft_putstr(data.str);
+	ret += write(1, data.str, str_len);
 	return (ret);
 }
 
@@ -106,14 +108,14 @@ static int		ft_numbers(t_data data, int str_len, int ret)
 		ret += ft_if_minus(data, pref_len, str_len, &flag);
 	else
 	{
-		ret += ft_putstr(data.prefix);
+		ret += write(1, data.prefix, pref_len);
 		flag = data.prec.prec;
 		while (data.prec.prec != str_len)
 		{
 			ret += write(1, "0", 1);
 			data.prec.prec--;
 		}
-		ret += ft_putstr(data.str);
+		ret += write(1, data.str, str_len);
 		ret += ft_put(' ', data.wid.wid - pref_len - flag);
 	}
 	return (ret);

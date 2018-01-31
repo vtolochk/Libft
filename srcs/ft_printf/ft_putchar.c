@@ -6,7 +6,7 @@
 /*   By: vtolochk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/27 11:46:55 by vtolochk          #+#    #+#             */
-/*   Updated: 2018/01/27 12:00:10 by vtolochk         ###   ########.fr       */
+/*   Updated: 2018/01/31 15:14:25 by vtolochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int	ft_if_2_bytes(unsigned char *b, unsigned int t, unsigned char o)
 	return (2);
 }
 
-int			ft_putchar(unsigned int c, char one_byte)
+int			ft_putchar(unsigned int c)
 {
 	unsigned int	temp;
 	unsigned int	size;
@@ -66,7 +66,7 @@ int			ft_putchar(unsigned int c, char one_byte)
 		byte[octet++] = '0';
 	temp = c;
 	size = ft_get_act_bits(c);
-	if (size <= 7 || one_byte == 1)
+	if (size <= 7)
 		return (write(1, &c, 1));
 	else if (size <= 11)
 		return (ft_if_2_bytes(byte, temp, octet));

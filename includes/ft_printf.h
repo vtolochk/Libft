@@ -6,7 +6,7 @@
 /*   By: vtolochk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/28 16:27:42 by vtolochk          #+#    #+#             */
-/*   Updated: 2018/01/30 14:16:21 by vtolochk         ###   ########.fr       */
+/*   Updated: 2018/01/31 15:36:22 by vtolochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,10 @@ typedef struct		s_data
 
 unsigned int		*ft_ustrsub(unsigned int *s, unsigned int st, size_t len);
 size_t				ft_ustrlen(unsigned int *str);
-int					ft_putstr(char *str);
 int					ft_get_bytes(unsigned int ch);
 unsigned int		ft_uputstr(unsigned int *str);
 unsigned int		ft_get_act_bits(unsigned int c);
-int					ft_putchar(unsigned int c, char one_byte);
+int					ft_putchar(unsigned int c);
 int					ft_put(char sign, ssize_t len);
 void				ft_len_init(t_length *len);
 void				ft_format_init(t_data *data);
