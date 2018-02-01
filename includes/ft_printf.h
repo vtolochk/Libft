@@ -13,8 +13,6 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
 # include "libft.h"
 # define MASK_1 49280
 # define MASK_2 14712960
