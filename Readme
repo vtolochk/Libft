@@ -1,15 +1,2 @@
 # Libft
-To use this static library you need to build it.
-1.You need to write "make" in terminal in libft folder.
-2.Then you need to write "make clean" to delete object files.
-3.To use library  functions you just need to include header file
-which situated in includes folder. 
-When you'll compile your main.c just add libft.a to your compile file.
-
-Some examples: 
-	gcc main.c /* your files */ libft.a
-	clang main.c /* your files */ libft.a
-
-Example how to include libft.h in your main.c:
-	#include "libft.h"
-	#include "your path to libft.h/libft.h"
+It is my first own library of some standard functions in C language.
