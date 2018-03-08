@@ -6,24 +6,25 @@
 /*   By: vtolochk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/08 16:37:20 by vtolochk          #+#    #+#             */
-/*   Updated: 2018/03/08 13:57:53 by vtolochk         ###   ########.fr       */
+/*   Updated: 2018/03/08 14:04:28 by vtolochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free_tab(void **tab)
+void	*ft_free_tab(void **tab)
 {
 	size_t i;
 
 	i = 0;
 	if (tab == 0)
-		return ;
-	while ((char *)tab[i] != 0)
+		return (tab);
+	while (tab[i])
 	{
-		free((char *)tab[i]);
+		free(tab[i]);
 		i++;
 	}
 	free(tab);
 	tab = 0;
+	return (0);
 }
