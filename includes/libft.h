@@ -6,7 +6,7 @@
 /*   By: vtolochk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/29 16:26:02 by vtolochk          #+#    #+#             */
-/*   Updated: 2018/01/30 14:16:02 by vtolochk         ###   ########.fr       */
+/*   Updated: 2018/03/08 14:06:34 by vtolochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ char			*ft_itoa(int n);
 size_t			ft_get_items(char const *s, char c);
 char			*ft_strndup(char *s, size_t n);
 int				ft_power(int num, int power);
-void			ft_free_tab(void **tab);
+void			*ft_free_tab(void **tab);
 int				get_next_line(const int fd, char **line);
-void			ft_free_tab(void **tab);
+void			*ft_free_tab(void **tab);
 void			ft_strtolower(char **str);
 char			*ft_itoa_base(size_t value, size_t base);
 int				ft_printf(const char *format, ...);
