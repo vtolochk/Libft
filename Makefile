@@ -6,7 +6,7 @@
 #    By: vtolochk <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/31 16:48:11 by vtolochk          #+#    #+#              #
-#    Updated: 2018/01/31 15:36:53 by vtolochk         ###   ########.fr        #
+#    Updated: 2018/03/17 14:54:18 by vtolochk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 NAME = libft.a
 
-HEADER = libft.h
+HEADER = includes/*.h
 
 VPATH = srcs
 
@@ -35,26 +35,26 @@ ORIGINAL_LIST = ft_atoi.c ft_bzero.c ft_free_tab.c ft_isalnum.c ft_isalpha.c \
 		ft_float.c ft_get_act_bits.c ft_pointer.c ft_printf.c \
 		ft_putchar.c ft_snumbers.c ft_unumbers.c ft_uputstr.c \
 		ft_ustrlen.c ft_ustrsub.c handling_strings.c helpers.c if_functions.c \
-		initialization.c
+		initialization.c ft_get_items.c
 
-OBJ_LIST = $(patsubst %.c, %.o, $(ORIGINAL_LIST))
+OBJ_LIST = $(ORIGINAL_LIST:.c=.o)
 
 CFLAGS = -Wall -Werror -Wextra -Iincludes
 
 CC = gcc
 
-all: $(NAME) $(OBJ_LIST)
+all: $(NAME)
+
+%.o: %.c $(HEADER)
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME): $(OBJ_LIST)
-	@$(AR) rc $(NAME) $(OBJ_LIST)
-	@echo "Libft.a created"
+	$(AR) rc $(NAME) $(OBJ_LIST)
 
 clean:
-	@$(RM) $(OBJ_LIST)
-	@echo "Object files were deleted"
+	$(RM) $(OBJ_LIST)
 
 fclean: clean
-	@$(RM) $(NAME) 
-	@echo "Libft.a was deleted"
+	$(RM) $(NAME) 
 
 re: fclean all
