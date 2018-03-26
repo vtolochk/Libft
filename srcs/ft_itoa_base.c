@@ -31,9 +31,9 @@ char			*ft_itoa_base(size_t value, size_t base)
 	i = 0;
 	if (base < 2 || base > 16)
 		return (NULL);
-	if (!(res = (char *)malloc(21 * sizeof(char))))
+	if (!(res = (char *)malloc(42 * sizeof(char))))
 		return (NULL);
+	ft_bzero(res, 42);
 	ft_write_to_arr(value, base, &i, res);
-	res[i] = '\0';
 	return (res);
 }
