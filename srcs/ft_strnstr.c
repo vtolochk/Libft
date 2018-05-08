@@ -19,23 +19,23 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t		a;
 
 	little_start = little;
-	a = 0;
 	i = len;
 	if (*little == '\0')
 		return ((char *)big);
-	while (len-- > 0 && *big != '\0')
+	while (len-- > 0 && *big)
 	{
+		a = 0;
 		little = little_start;
-		while (*little == *big && i-- > 0 && big++ != '\0')
+		while (*little == *big && i-- > 0 && *big)
 		{
 			a++;
 			little++;
+			big++;
 			if (*little == '\0')
 				return ((char *)big - a);
 		}
 		big = big - a;
 		i = len;
-		a = 0;
 		big++;
 	}
 	return (NULL);
