@@ -6,7 +6,7 @@
 #    By: vtolochk <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/31 16:48:11 by vtolochk          #+#    #+#              #
-#    Updated: 2018/05/08 17:09:51 by vtolochk         ###   ########.fr        #
+#    Updated: 2018/05/11 11:38:17 by vtolochk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ ORIGINAL_LIST = ft_atoi.c ft_bzero.c ft_free_tab.c ft_isalnum.c ft_isalpha.c \
 		ft_float.c ft_get_act_bits.c ft_pointer.c ft_printf.c \
 		ft_putchar.c ft_snumbers.c ft_unumbers.c ft_uputstr.c \
 		ft_ustrlen.c ft_ustrsub.c handling_strings.c helpers.c if_functions.c \
-		initialization.c ft_get_items.c ft_split_whitespaces.c
+		initialization.c ft_get_items.c ft_split_whitespaces.c arr_len.c
 
 OBJ_LIST = $(ORIGINAL_LIST:.c=.o)
 
