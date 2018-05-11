@@ -74,5 +74,6 @@ char			*ft_itoa_base(size_t value, size_t base);
 int				ft_printf(const char *format, ...);
 char            **ft_split_whitespaces(char *str);
 int             array_len(char **array);
+void            ft_putstr_fd(char *str, int fd);
 
 #endif
