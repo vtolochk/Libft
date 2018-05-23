@@ -66,14 +66,14 @@ char			*ft_itoa(int n);
 size_t			ft_get_items(char const *s, char c);
 char			*ft_strndup(char *s, size_t n);
 int				ft_power(int num, int power);
-void			*ft_free_tab(void **tab);
 int				get_next_line(const int fd, char **line);
-void			*ft_free_tab(void **tab);
+void			*ft_free_tab(void **arr);
 void			ft_strtolower(char **str);
 char			*ft_itoa_base(size_t value, size_t base);
 int				ft_printf(const char *format, ...);
 char            **ft_split_whitespaces(char *str);
 int             array_len(char **array);
 void            ft_putstr_fd(char *str, int fd);
+int             ft_is_whitespace(int c);
 
 #endif

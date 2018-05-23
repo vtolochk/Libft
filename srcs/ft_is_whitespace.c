@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_is_whitespace.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtolochk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vtolochk <vtolochk@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/04 13:01:01 by vtolochk          #+#    #+#             */
-/*   Updated: 2017/11/23 11:16:58 by vtolochk         ###   ########.fr       */
+/*   Created: 2018/05/22 15:51:00 by vtolochk          #+#    #+#             */
+/*   Updated: 2018/05/22 15:51:00 by vtolochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, char *s2)
+int ft_is_whitespace(int c)
 {
-	size_t n;
-
-	if (!s1 || !s2)
-		return (NULL);
-	n = ft_strlen(s1) + ft_strlen(s2);
-	while (*s1 != '\0')
-		s1++;
-	while (*s2 != '\0')
-		*s1++ = *s2++;
-	*s1 = '\0';
-	return (s1 - n);
+	if (c == ' ' || c == '\t' || c == '\n')
+		return (1);
+	return (0);
 }

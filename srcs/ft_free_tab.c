@@ -12,19 +12,19 @@
 
 #include "libft.h"
 
-void	*ft_free_tab(void **tab)
+void	*ft_free_tab(void **arr)
 {
 	size_t i;
 
 	i = 0;
-	if (tab == 0)
-		return (tab);
-	while (tab[i])
+	if (arr == 0)
+		return (arr);
+	while (arr[i])
 	{
-		free(tab[i]);
+		free(arr[i]);
 		i++;
 	}
-	free(tab);
-	tab = 0;
+	free(arr);
+	arr = 0;
 	return (0);
 }
