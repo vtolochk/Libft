@@ -20,11 +20,7 @@ void	*ft_free_tab(void **arr)
 	if (arr == 0)
 		return (arr);
 	while (arr[i])
-	{
-		free(arr[i]);
-		i++;
-	}
+		free(arr[i++]);
 	free(arr);
-	arr = 0;
 	return (0);
 }
