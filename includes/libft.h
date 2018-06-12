@@ -75,5 +75,8 @@ char            **ft_split_whitespaces(char *str);
 int             array_len(char **array);
 void            ft_putstr_fd(char *str, int fd);
 int             ft_is_whitespace(int c);
+char            **trim_all_the_array(char **array);
+char            **array_append_str(char **arr, char *str);
+char            **array_append_array(char **arr, char **append_arr);
 
 #endif
