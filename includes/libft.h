@@ -78,5 +78,6 @@ int             ft_is_whitespace(int c);
 char            **trim_all_the_array(char **array);
 char            **array_append_str(char **arr, char *str);
 char            **array_append_array(char **arr, char **append_arr);
+char            **increase_array(char **arr, int increase_number);
 
 #endif

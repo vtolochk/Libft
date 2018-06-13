@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array_append_array.c                               :+:      :+:    :+:   */
+/*   increase_array.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtolochk <vtolochk@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/12 16:28:00 by vtolochk          #+#    #+#             */
-/*   Updated: 2018/06/12 16:28:00 by vtolochk         ###   ########.fr       */
+/*   Created: 2018/06/13 17:10:00 by vtolochk          #+#    #+#             */
+/*   Updated: 2018/06/13 17:10:00 by vtolochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char **array_append_array(char **arr, char **append_arr)
+char **increase_array(char **arr, int increase_number)
 {
 	int i;
-	int j;
-	int arr_len;
-	int append_arr_len;
 	char **new_arr;
+	int current_len;
+	int increased_len;
 
-	j = 0;
 	i = 0;
-	arr_len = array_len(arr);
-	append_arr_len = array_len(append_arr);
-	if (!arr_len || !append_arr_len)
-		return  (NULL);
-	new_arr = (char **)malloc(sizeof(char *) * (arr_len + append_arr_len + 1));
+	current_len = array_len(arr);
+	if (current_len == 0)
+		return (NULL);
+	if (increase_number <= 0)
+		return (arr);
+	increased_len = current_len + increase_number + 1;
+	new_arr = (char **)malloc(sizeof(char *) * increased_len);
+	while (increased_len > 0)
+		new_arr[--increased_len] = NULL;
 	while (arr[i])
-		new_arr[j++] = ft_strdup(arr[i++]);
-	i = 0;
-	while (append_arr[i])
-		new_arr[j++] = ft_strdup(append_arr[i++]);
-	new_arr[j] = NULL;
+	{
+		new_arr[i] = ft_strdup(arr[i]);
+		i++;
+	}
 	return (new_arr);
 }

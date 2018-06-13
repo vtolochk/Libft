@@ -37,6 +37,7 @@ ORIGINAL_LIST = ft_atoi.c ft_bzero.c ft_free_tab.c ft_isalnum.c ft_isalpha.c \
 		ft_ustrlen.c ft_ustrsub.c handling_strings.c helpers.c if_functions.c \
 		initialization.c ft_get_items.c ft_split_whitespaces.c array_len.c ft_putstr_fd.c \
 		ft_is_whitespace.c ft_trim_all_the_array.c array_append_str.c array_append_array.c \
+		increase_array.c
 
 OBJ_LIST = $(ORIGINAL_LIST:.c=.o)
 
